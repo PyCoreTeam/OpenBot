@@ -10,6 +10,7 @@ There are 2 build methods:
 ```shell
 ./gradlew build
 ```
+
 This will generate a common OpenBot archive and it's the slowest.
 
 ##### Fast Build
@@ -22,3 +23,10 @@ This will generate a common OpenBot archive.
 - [x] Test  
 ___You can also use *Shadow* to improve building speed___
 
+##### Tips
+Specially, the default build method is through **Shadow**, if you need raw gradle build, remove this in `build.gradle.kts`:  
+```kotlin
+tasks.build {
+    dependsOn(tasks.shadowJar)
+}
+```

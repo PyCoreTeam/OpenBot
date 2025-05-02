@@ -22,3 +22,11 @@
 - [x] 测试  
 ___你也可以用*Shadow*来改善构建速度___
 
+##### Tips
+特别地，默认构建用的是**Shadow**, if you need raw gradle build, remove this in `build.gradle.kts`:
+```kotlin
+tasks.build {
+    dependsOn(tasks.shadowJar)
+}
+```
+
